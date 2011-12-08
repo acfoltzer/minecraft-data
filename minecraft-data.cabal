@@ -15,6 +15,6 @@ Library
                      bytestring == 0.9.*,
                      cereal >= 0.3.4 && < 0.4,
                      filepath == 1.2.*,
-                     nbt == 0.2.*,
+                     nbt == 0.3.*,
                      vector == 0.9.*,
                      zlib == 0.5.*

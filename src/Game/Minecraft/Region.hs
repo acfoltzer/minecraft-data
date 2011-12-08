@@ -14,6 +14,7 @@ import Data.Word
 import System.FilePath
 
 import Data.NBT
+import Game.Minecraft.Block
 
 -- | The (X,Z) coordinates specifying a 'Chunk'
 type ChunkCoords = (Int, Int)
@@ -100,9 +101,16 @@ chunkToRegionCoords (x, z) = (x `shift` (-5), z `shift` (-5))
 regionFileName :: RegionCoords -> FilePath
 regionFileName (x, z) = "r" <.> show x <.> show z <.> "mcr"
 
-testRegion = decode <$> S.readFile ("testWorld/region" </> regionFileName (-1,-1)) :: IO (Either String Region)
+testRegion = decode <$> S.readFile ("../testWorld/region" </> regionFileName (-1,-1)) :: IO (Either String Region)
 
 testChunk = do (Right (Region v)) <- testRegion
                let (Just (Chunk c)) = (V.!) v 1023
                    (Right nbt) = decodeLazy c
                return (nbt :: NBT)
+
+testBlocks = do (CompoundTag _ [(CompoundTag (Just "Level") ts)]) <- testChunk
+                return $ filter (\t -> case t of (ByteArrayTag (Just "Blocks") _ _) -> True; _ -> False) ts
+
+testBlockIds :: IO [BlockId]
+testBlockIds = do [(ByteArrayTag _ _ bs)] <- testBlocks
+                  return (map (toEnum . fromIntegral) (S.unpack bs))
