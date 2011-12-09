@@ -9,8 +9,8 @@ Build-type:          Simple
 Cabal-version:       >=1.8
 
 Library
-  exposed-modules:   Game.Minecraft.Region
-  hs-source-dirs:    src
+  exposed-modules:   Game.Minecraft.Block,
+                     Game.Minecraft.Region
   build-depends:     base == 4.*,
                      bytestring == 0.9.*,
                      cereal >= 0.3.4 && < 0.4,

@@ -101,7 +101,7 @@ chunkToRegionCoords (x, z) = (x `shift` (-5), z `shift` (-5))
 regionFileName :: RegionCoords -> FilePath
 regionFileName (x, z) = "r" <.> show x <.> show z <.> "mcr"
 
-testRegion = decode <$> S.readFile ("../testWorld/region" </> regionFileName (-1,-1)) :: IO (Either String Region)
+testRegion = decode <$> S.readFile ("testWorld/region" </> regionFileName (-1,-1)) :: IO (Either String Region)
 
 testChunk = do (Right (Region v)) <- testRegion
                let (Just (Chunk c)) = (V.!) v 1023

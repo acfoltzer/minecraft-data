@@ -14,7 +14,7 @@ data BlockId = Air | Stone | Grass | Dirt | Cobblestone | WoodenPlank | Sapling
              | Dandelion | Rose | BrownMushroom | RedMushroom | BlockofGold 
              | BlockofIron | StoneSlabDouble | StoneSlab | Brick | TNT 
              | Bookcase | MossStone | Obsidian | Torch | Fire | MobSpawner 
-             | WoodenStairs | Chest | RedstoneWire | DiamondOre | BlockofDiamond 
+             | WoodenStairs | Chest | RedstoneWire | DiamondOre | BlockofDiamond
              | Workbench | WheatCrop | Farmland | Furnace | FurnaceSmelting 
              | SignBlock | WoodDoorBlock | Ladder | Rails | CobblestoneStairs 
              | SignWallBlock | Lever | StonePressurePlate | IronDoorBlock 
@@ -23,11 +23,12 @@ data BlockId = Air | Stone | Grass | Dirt | Cobblestone | WoodenPlank | Sapling
              | SnowBlock | Cactus | ClayBlock | SugarCaneBlock | Jukebox 
              | Fence | Pumpkin | Netherrack | SoulSand | Glowstone | Portal 
              | JackOLantern | CakeBlock | RedstoneRepeaterBlockOff 
-             | RedstoneRepeaterBlockOn | LockedChest | Trapdoor | SilverfishStone 
-             | StoneBricks | BrownMushroomBlock | RedMushroomBlock | IronBars 
-             | GlassPane  | MelonBlock | PumpkinVine | MelonVine | Vines 
-             | FenceGate | BrickStairs | StoneBrickStairs | Mycelium | LilyPad 
-             | NetherBrick | NetherBrickFence | NetherBrickStairs | NetherWart 
+             | RedstoneRepeaterBlockOn | LockedChest | Trapdoor 
+             | SilverfishStone | StoneBricks | BrownMushroomBlock 
+             | RedMushroomBlock | IronBars  | GlassPane  | MelonBlock 
+             | PumpkinVine | MelonVine | Vines | FenceGate | BrickStairs 
+             | StoneBrickStairs | Mycelium | LilyPad | NetherBrick 
+             | NetherBrickFence | NetherBrickStairs | NetherWart 
              | EnchantmentTable | BrewingStandBlock | CauldronBlock | EndPortal 
              | EndPortalFrame | EndStone | DragonEgg
                deriving (Show, Ord, Eq, Enum)
